@@ -1,5 +1,6 @@
 include:
   - ./supabase/docker/docker-compose.yml
+  # Удалил т.к. не запускался докер
 
 volumes:
   n8n_storage:
@@ -49,10 +50,10 @@ x-init-ollama: &init-ollama
   command:
     - "-c"
     - "sleep 3; OLLAMA_HOST=ollama:11434 ollama pull qwen2.5:7b-instruct-q4_K_M; OLLAMA_HOST=ollama:11434 ollama pull nomic-embed-text"
-    # For a larger context length verison of the model, run these commands:
+    # Для версии модели с большей длиной контекста выполните следующие команды:
     # echo "FROM qwen2.5:7b-instruct-q4_K_M\n\nPARAMETER num_ctx 8096" > Modelfile
     # ollama create qwen2.5:7b-8k -f ./Modelfile
-    # Change the name of the LLM and num_ctx as you see fit.
+    # Измените название LLM и num_ctx по своему усмотрению.
 
 services:
   flowise:
