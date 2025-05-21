@@ -1,5 +1,5 @@
-include:
-  - ./supabase/docker/docker-compose.yml
+#include:
+#  - ./supabase/docker/docker-compose.yml
   # Удалил т.к. не запускался докер
 
 volumes:
